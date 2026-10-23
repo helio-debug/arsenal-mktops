@@ -17,10 +17,9 @@ env:
     value: /data/site
   - name: PUBLIC_ORIGIN
     value: https://arsenal.studioartemis.co
-  - name: MAUTIC_FORM_ID
-    value: "9"
-  - name: MAUTIC_FORM_ALIAS
-    value: mktops__ar
+  # Segmento "MktOps · Arsenal (baixou)": quem entra recebe a régua de boas-vindas (campanha 22)
+  - name: MAUTIC_SEGMENT
+    value: "82"
   # E-mail "MktOps · Arsenal · link de acesso" (provisionar-mautic.py)
   - name: MAUTIC_EMAIL_LINK
     value: "192"

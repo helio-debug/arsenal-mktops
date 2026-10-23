@@ -21,8 +21,7 @@ const ORIGEM = process.env.PUBLIC_ORIGIN || "https://arsenal.studioartemis.co";
 const SEGREDO = process.env.SESSION_SECRET || "";
 const MAUTIC_URL = (process.env.MAUTIC_URL || "").replace(/\/$/, "");
 const MAUTIC_AUTH = Buffer.from(`${process.env.MAUTIC_USER || ""}:${process.env.MAUTIC_PASSWORD || ""}`).toString("base64");
-const MAUTIC_FORM_ID = process.env.MAUTIC_FORM_ID || "9";
-const MAUTIC_FORM_ALIAS = process.env.MAUTIC_FORM_ALIAS || "mktops__ar";
+const MAUTIC_SEGMENT = process.env.MAUTIC_SEGMENT || "82";             // MktOps · Arsenal (baixou) → régua (campanha 22)
 const MAUTIC_EMAIL_LINK = process.env.MAUTIC_EMAIL_LINK || "";      // e-mail do link mágico
 const COOKIE = "arsenal_sessao";
 const SESSAO_DIAS = 400;
@@ -120,15 +119,17 @@ async function cadastro(req, res) {
   json(res, 200, { ok: true, nome: d.nome });
   if (txt(b.empresa_site)) return;                     // armadilha de robô: entra, mas não vira lead
   // Lead no Mautic depois de responder: a entrada nunca espera o CRM.
-  const f = new URLSearchParams();
-  f.set("mauticform[formId]", MAUTIC_FORM_ID);
-  f.set("mauticform[formName]", MAUTIC_FORM_ALIAS);
-  for (const [k, v] of Object.entries({ nome: d.nome, email: d.email, telefone: d.telefone, perfil: d.perfil, isca: d.isca,
-    lead_utm_source: d.utm_source, lead_utm_medium: d.utm_medium, lead_utm_campaign: d.utm_campaign, lead_utm_content: d.utm_content })) f.set(`mauticform[${k}]`, v);
-  f.set("mauticform[return]", "");
-  f.set("mauticform[messenger]", "1");
-  const r = await mautic("POST", `/form/submit?formId=${MAUTIC_FORM_ID}`, f.toString(), "form");
-  console.log("cadastro", d.isca, r.status);
+  // Pela API de contatos, nunca pelo /form/submit: o formulário público identifica o contato pelo IP, e todo
+  // cadastro sai do mesmo IP do cluster — em 23/10/2026 um cadastro novo sobrescreveu o e-mail do anterior.
+  // A API casa pelo e-mail (campo único): mesma pessoa atualiza, pessoa nova cria.
+  const r = await mautic("POST", "/api/contacts/new", {
+    email: d.email, firstname: d.nome, mobile: d.telefone, perfil_profissional: d.perfil, arsenal_isca: d.isca,
+    lead_utm_source: d.utm_source, lead_utm_medium: d.utm_medium, lead_utm_campaign: d.utm_campaign, lead_utm_content: d.utm_content,
+    tags: ["arsenal-mktops", "mktops"], overwriteWithBlank: false,
+  });
+  const id = r.json && r.json.contact && r.json.contact.id;
+  const s = id ? await mautic("POST", `/api/segments/${MAUTIC_SEGMENT}/contact/${id}/add`, {}) : { status: 0 };
+  console.log("cadastro", d.isca, "contato", id || "-", r.status, "segmento", s.status);
 }
 
 async function pedirLink(req, res) {
