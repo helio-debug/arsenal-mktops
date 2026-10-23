@@ -1,0 +1,647 @@
+{
+  "_leia": "Fonte única do portal. Mude 'acesso' (gratis | pago | breve) e rode ./publicar.sh. Itens 'gratis' com 'skills' viram zip sanitizado em site/downloads/ (empacotar.py). Itens 'pago' levam pro 'link'. Workflows são abertos, sem cadastro.",
+  "areas": [
+    {
+      "id": "pesquisa",
+      "nome": "Pesquisa"
+    },
+    {
+      "id": "copy",
+      "nome": "Copy"
+    },
+    {
+      "id": "anuncios",
+      "nome": "Anúncios"
+    },
+    {
+      "id": "conteudo",
+      "nome": "Conteúdo"
+    },
+    {
+      "id": "video",
+      "nome": "Vídeo"
+    },
+    {
+      "id": "email",
+      "nome": "E-mail"
+    },
+    {
+      "id": "seo",
+      "nome": "SEO e busca em IA"
+    },
+    {
+      "id": "conversao",
+      "nome": "Conversão"
+    },
+    {
+      "id": "estrategia",
+      "nome": "Estratégia"
+    },
+    {
+      "id": "ferramentas",
+      "nome": "Design e ferramentas"
+    }
+  ],
+  "itens": [
+    {
+      "slug": "kit-de-arranque",
+      "tipo": "kit",
+      "area": "anuncios",
+      "acesso": "gratis",
+      "titulo": "Kit de Arranque",
+      "promessa": "As 10 ferramentas que produzem anúncio, carrossel e vídeo a partir do site da marca.",
+      "descricao": "Você passa a URL do site. A primeira ferramenta monta a ficha da marca (tese, inimigo, provas, oferta, tom). As outras nove leem essa ficha antes de escrever qualquer peça, então cada peça sai com as suas provas, a sua oferta e o seu tom.",
+      "entrega": [
+        "Ficha da marca a partir da URL",
+        "Ganchos e anúncio estático com copy pronta",
+        "Carrossel e estático de frase",
+        "Roteiro de vídeo, vídeo animado e edição de vídeo gravado",
+        "Revisão anti-IA e conferência de limite de caracteres por plataforma"
+      ],
+      "arquivo": "_dist/kit-de-arranque.zip",
+      "formato": "zip · Claude Code",
+      "contem": [
+        "ads-create",
+        "ads-dna",
+        "ads-video-scripts",
+        "carousel-mktops",
+        "copy-format-check",
+        "copywriting-guardrails",
+        "edicao-de-video",
+        "estatico-de-frase",
+        "hook-lab",
+        "motion-videos"
+      ]
+    },
+    {
+      "slug": "auditoria-de-anuncios",
+      "tipo": "skill",
+      "area": "anuncios",
+      "acesso": "gratis",
+      "titulo": "Auditoria de Anúncios",
+      "promessa": "Meta e Google Ads auditados em 120 checagens, com nota e a lista do que desligar primeiro.",
+      "descricao": "Cinco ferramentas que olham a conta como um gestor de tráfego sênior olharia: pixel e conversão, estrutura, fadiga de criativo, verba e lance. Cada achado sai com o impacto estimado, pra você saber por onde começar.",
+      "entrega": [
+        "Meta Ads: 46 checagens (Pixel/CAPI, criativo, público, Advantage+)",
+        "Google Ads: 74 checagens (Search, PMax, YouTube, conversão)",
+        "Revisão de verba e estratégia de lance",
+        "Diagnóstico de fadiga e diversidade de criativo"
+      ],
+      "skills": [
+        "ads",
+        "ads-meta",
+        "ads-google",
+        "ads-budget",
+        "ads-creative"
+      ],
+      "formato": "zip · 5 ferramentas"
+    },
+    {
+      "slug": "hook-lab",
+      "tipo": "skill",
+      "area": "video",
+      "acesso": "gratis",
+      "titulo": "Hook Lab",
+      "promessa": "Os 3 primeiros segundos do seu reel, forjados ou auditados antes de você gravar.",
+      "descricao": "Seis formatos de hook, dez elementos que fazem um vídeo segurar a pessoa e quatro componentes que toda abertura precisa ter. Em modo Forge ela escreve a abertura; em modo Gate ela reprova a que você já tem e diz o que falta.",
+      "entrega": [
+        "Modo Forge: escreve 5 aberturas por vídeo",
+        "Modo Gate: audita e reescreve a abertura existente",
+        "Biblioteca de formatos com exemplos reais"
+      ],
+      "skills": [
+        "hook-lab"
+      ],
+      "formato": "zip · 1 ferramenta"
+    },
+    {
+      "slug": "roteiros-de-video",
+      "tipo": "skill",
+      "area": "video",
+      "acesso": "gratis",
+      "titulo": "Roteiros de Vídeo que Vendem",
+      "promessa": "VSL de 60 segundos a 25 minutos e roteiro de vídeo ad em 12 formatos.",
+      "descricao": "A ferramenta de VSL escreve em três durações (curta pra anúncio, média pra pré-call, longa pra lançamento). A de vídeo ad entrega cena, texto de tela, narração e CTA. O Hook Lab vem junto pra fechar a abertura.",
+      "entrega": [
+        "VSL curta, média e longa em pt-BR",
+        "Roteiros de Reels, Stories e Feed em 12 formatos",
+        "Hook Lab incluso"
+      ],
+      "skills": [
+        "vsl-writer",
+        "ads-video-scripts",
+        "hook-lab"
+      ],
+      "formato": "zip · 3 ferramentas"
+    },
+    {
+      "slug": "pesquisa-de-mercado",
+      "tipo": "skill",
+      "area": "pesquisa",
+      "acesso": "gratis",
+      "titulo": "Pesquisa de Mercado",
+      "promessa": "Briefing de mercado, dossiê de concorrente e voz do cliente, com fonte citada.",
+      "descricao": "O ponto de partida de qualquer campanha da casa. Uma pesquisa o mercado com Porter, Jobs-to-be-Done e Oceano Azul; outra transforma URLs de concorrentes em dossiê; a terceira extrai dor, gatilho e linguagem real de transcrição, review e comentário.",
+      "entrega": [
+        "Briefing estratégico de mercado",
+        "Dossiê de concorrentes a partir de URLs",
+        "Mapa de voz do cliente (dores, objeções, frases literais)",
+        "Briefing de pauta com tese e dado citável"
+      ],
+      "skills": [
+        "market-research-briefing",
+        "competitor-profiling",
+        "customer-research",
+        "content-research-briefing"
+      ],
+      "formato": "zip · 4 ferramentas"
+    },
+    {
+      "slug": "emails-que-vendem",
+      "tipo": "skill",
+      "area": "email",
+      "acesso": "gratis",
+      "titulo": "E-mails que Vendem",
+      "promessa": "Régua de boas-vindas, nutrição e cold e-mail B2B com assunto, corpo e cadência.",
+      "descricao": "Três ferramentas de e-mail: uma desenha sequências automáticas (boas-vindas, onboarding, reativação, pós-compra), outra escreve prospecção fria com follow-up, a terceira gera a régua inteira a partir da URL do seu negócio.",
+      "entrega": [
+        "Sequência automática com timing e segmentação",
+        "Cold e-mail B2B com follow-ups",
+        "Régua completa a partir de uma URL"
+      ],
+      "skills": [
+        "email-sequence",
+        "cold-email",
+        "market-emails"
+      ],
+      "formato": "zip · 3 ferramentas"
+    },
+    {
+      "slug": "pagina-que-converte",
+      "tipo": "skill",
+      "area": "conversao",
+      "acesso": "gratis",
+      "titulo": "Página que Converte",
+      "promessa": "Auditoria de landing page seção a seção, com o hero reescrito.",
+      "descricao": "Cole a URL da página. A ferramenta identifica o tipo, passa os 7 pontos (hero, clareza, motivação, prova, fricção, objeção, CTA) e devolve o que mudar na ordem de impacto. As outras cuidam de formulário, popup e cadastro.",
+      "entrega": [
+        "Auditoria de landing page com nota por seção",
+        "Otimização de formulário de captura",
+        "Popup e fluxo de cadastro sem fricção",
+        "Plano de teste A/B"
+      ],
+      "skills": [
+        "market-landing",
+        "page-cro",
+        "form-cro",
+        "popup-cro",
+        "ab-test-setup"
+      ],
+      "formato": "zip · 5 ferramentas"
+    },
+    {
+      "slug": "seo-e-busca-em-ia",
+      "tipo": "skill",
+      "area": "seo",
+      "acesso": "gratis",
+      "titulo": "SEO e Busca em IA",
+      "promessa": "Página pronta pra ranquear no Google e ser citada pelo ChatGPT.",
+      "descricao": "Cinco ferramentas que cobrem o que pesa hoje: estrutura que os buscadores de IA citam, raio-x de uma página, SEO técnico, dados estruturados e auditoria de menção de marca no ChatGPT, Perplexity e AI Overviews.",
+      "entrega": [
+        "Otimização pra ser citado por buscador de IA",
+        "Raio-x de SEO de uma página",
+        "SEO técnico em 9 categorias",
+        "Schema markup (JSON-LD) pronto pra colar"
+      ],
+      "skills": [
+        "ai-seo",
+        "seo-geo",
+        "seo-page",
+        "seo-technical",
+        "schema-markup"
+      ],
+      "formato": "zip · 5 ferramentas"
+    },
+    {
+      "slug": "estrategia-de-marketing",
+      "tipo": "skill",
+      "area": "estrategia",
+      "acesso": "gratis",
+      "titulo": "Estratégia de Marketing",
+      "promessa": "Plano de 12 meses, preço, lançamento e isca de captura, no nível de um CMO fracionado.",
+      "descricao": "As ferramentas que a Artemis usa antes de escrever uma linha de copy: plano anual por AARRR, estratégia de preço e pacote, plano de lançamento em 5 fases, isca de captura e a biblioteca de 139 táticas filtradas pelo seu estágio.",
+      "entrega": [
+        "Plano de marketing de 12 meses",
+        "Estratégia de preço e pacote",
+        "Plano de lançamento",
+        "Desenho de isca de captura",
+        "139 táticas filtradas pro seu caso"
+      ],
+      "skills": [
+        "marketing-plan",
+        "pricing-strategy",
+        "launch-strategy",
+        "lead-magnets",
+        "marketing-ideas",
+        "marketing-psychology"
+      ],
+      "formato": "zip · 6 ferramentas"
+    },
+    {
+      "slug": "os-15-agentes",
+      "tipo": "kit",
+      "area": "estrategia",
+      "acesso": "gratis",
+      "titulo": "Os 15 Agentes",
+      "promessa": "Os subagentes que auditam conta de anúncio, site e criativo em paralelo.",
+      "descricao": "Seis auditores de mídia paga (Meta, Google, verba, criativo, tracking, compliance), cinco analistas de marketing (técnico, conteúdo, conversão, concorrência, estratégia) e quatro de criação (estrategista, copywriter, designer, adaptador de formato). Vêm junto os dois orquestradores que põem os agentes pra trabalhar em paralelo.",
+      "entrega": [
+        "15 agentes prontos pra .claude/agents/",
+        "Orquestrador de mídia paga: auditoria multi-plataforma com 6 agentes",
+        "Orquestrador de site: auditoria de site com 5 agentes"
+      ],
+      "agentes": [
+        "audit-budget",
+        "audit-compliance",
+        "audit-creative",
+        "audit-google",
+        "audit-meta",
+        "audit-tracking",
+        "market-competitive",
+        "market-content",
+        "market-conversion",
+        "market-strategy",
+        "market-technical",
+        "creative-strategist",
+        "copy-writer",
+        "visual-designer",
+        "format-adapter"
+      ],
+      "skills": [
+        "ads-audit",
+        "market-audit",
+        "ads"
+      ],
+      "formato": "zip · 15 agentes + 3 ferramentas"
+    },
+    {
+      "slug": "kit-carrossel",
+      "tipo": "kit",
+      "area": "conteudo",
+      "acesso": "gratis",
+      "titulo": "Kit Carrossel MktOps",
+      "promessa": "O método de carrossel da casa com o pipeline de arte: copy em 4 atos e PNG 1080×1350.",
+      "descricao": "A ferramenta de carrossel nos três modos (caso, mecanismo e destilado), a revisão anti-IA, o template de arte e exemplos aprovados. Você escreve e renderiza o carrossel inteiro sem abrir o Canva.",
+      "entrega": [
+        "Ferramenta de carrossel (3 modos)",
+        "Template de arte + script de render",
+        "Copys aprovadas como referência",
+        "Revisão anti-IA e checagem de caracteres"
+      ],
+      "arquivo": "_dist/kit-carrossel-mktops.zip",
+      "formato": "zip · 17 MB · Claude Code + Node"
+    },
+    {
+      "slug": "segundo-cerebro-obsidian",
+      "tipo": "material",
+      "area": "ferramentas",
+      "acesso": "gratis",
+      "titulo": "Segundo Cérebro no Obsidian",
+      "promessa": "A estrutura de pastas e templates que o Claude Code lê como memória do seu negócio.",
+      "descricao": "O vault que a casa usa: inbox, projetos, notas permanentes, daily e fontes brutas, com os templates prontos. Abre no Obsidian e o Claude Code navega por ele.",
+      "entrega": [
+        "Vault pronto pro Obsidian",
+        "Templates de nota e daily",
+        "README de uso"
+      ],
+      "pasta": "_share/obsidian-vault-template",
+      "formato": "zip · Obsidian"
+    },
+    {
+      "slug": "swipe-file-viral",
+      "tipo": "material",
+      "area": "conteudo",
+      "acesso": "gratis",
+      "titulo": "Arsenal Viral — Swipe File",
+      "promessa": "Os esquemas de post que mais salvam e compartilham, separados por estrutura.",
+      "descricao": "Um arquivo de consulta com as estruturas de conteúdo que a casa usa pra escrever carrossel e post. Abre no navegador, sem instalar nada.",
+      "entrega": [
+        "Estruturas de post com exemplo",
+        "Quando usar cada uma",
+        "Arquivo único, abre offline"
+      ],
+      "arquivo": "swipe-file-esquemas-virais.html",
+      "formato": "html · abre no navegador"
+    },
+    {
+      "slug": "guia-edicao-de-video",
+      "tipo": "material",
+      "area": "video",
+      "acesso": "gratis",
+      "titulo": "Guia de Edição de Vídeo com IA",
+      "promessa": "Como editar vídeo gravado no Claude Code: corte, legenda e b-roll.",
+      "descricao": "O passo a passo da aula do YouTube em PDF, com os comandos prontos pra colar.",
+      "entrega": [
+        "PDF com o passo a passo",
+        "Comandos prontos pra colar"
+      ],
+      "arquivo": "clientes/Hélio Costa Jr./conteudo/aula-edicao-video-ia/site/guia-edicao-video-ia.pdf",
+      "formato": "pdf"
+    },
+    {
+      "slug": "catalogo-de-formatos",
+      "tipo": "material",
+      "area": "anuncios",
+      "acesso": "pago",
+      "preco": "R$ 47",
+      "titulo": "Catálogo de Formatos de Criativo",
+      "promessa": "33 formatos de anúncio com exemplo, quando usar e o prompt pra produzir.",
+      "descricao": "79 páginas. Cada formato vem com o exemplo de quem já roda, a situação em que ele funciona e o prompt pra produzir o seu.",
+      "entrega": [
+        "PDF de 79 páginas",
+        "33 formatos",
+        "Prompt de produção por formato"
+      ],
+      "link": "https://formatos.studioartemis.co",
+      "formato": "pdf"
+    },
+    {
+      "slug": "cerebro-da-empresa",
+      "tipo": "skill",
+      "area": "copy",
+      "acesso": "pago",
+      "preco": "R$ 197",
+      "titulo": "Cérebro da Empresa",
+      "promessa": "O arquivo de 14 blocos que faz qualquer IA escrever conhecendo o seu negócio.",
+      "descricao": "Você dá o site e o Instagram. Ela pesquisa e devolve o que você vende, pra quem, com que voz e contra quem, num arquivo que o Claude ou o ChatGPT leem em toda conversa.",
+      "entrega": [
+        "Skill para Claude ou ChatGPT",
+        "Arquivo de 14 blocos"
+      ],
+      "link": "",
+      "formato": "skill"
+    },
+    {
+      "slug": "sem-cara-de-ia",
+      "tipo": "skill",
+      "area": "copy",
+      "acesso": "pago",
+      "preco": "R$ 97",
+      "titulo": "Sem Cara de IA",
+      "promessa": "O texto volta reescrito e mais curto, com cada vício de IA apontado na linha.",
+      "descricao": "A revisão que toda copy da casa passa antes de sair. Cole o texto e receba a versão limpa e o laudo de cada vício nomeado.",
+      "entrega": [
+        "Skill para Claude ou ChatGPT",
+        "Laudo por linha"
+      ],
+      "link": "",
+      "formato": "skill"
+    },
+    {
+      "slug": "um-email-por-dia",
+      "tipo": "skill",
+      "area": "email",
+      "acesso": "pago",
+      "preco": "R$ 97",
+      "titulo": "Um E-mail Por Dia",
+      "promessa": "Régua de 10 e-mails com a sua oferta, mais o bloco que faz o diário durar.",
+      "descricao": "Escrita na estrutura de quem manda e-mail todo dia há vinte anos. Depois da régua, o bloco reciclável segura a lista aquecida.",
+      "entrega": [
+        "Skill para Claude ou ChatGPT",
+        "10 e-mails + bloco reciclável"
+      ],
+      "link": "",
+      "formato": "skill"
+    },
+    {
+      "slug": "spyops",
+      "tipo": "ferramenta",
+      "area": "pesquisa",
+      "acesso": "pago",
+      "preco": "",
+      "titulo": "SpyOps",
+      "promessa": "Todos os anúncios ativos do concorrente, com copy, vídeo transcrito e funil até o checkout.",
+      "descricao": "Lê a Biblioteca de Anúncios da Meta sem login e sem token. Devolve a copy literal, as artes, os vídeos com transcrição e o caminho do anúncio até a página de pagamento.",
+      "entrega": [
+        "Instalação em 2 minutos",
+        "Relatório por concorrente"
+      ],
+      "link": "",
+      "formato": "Claude Code"
+    },
+    {
+      "slug": "gerente-de-trafego",
+      "tipo": "skill",
+      "area": "anuncios",
+      "acesso": "breve",
+      "titulo": "Gerente de Tráfego",
+      "promessa": "Pergunte em português onde o dinheiro da conta de anúncios está indo.",
+      "descricao": "Conecta a conta no Claude e responde o que está travado em aprendizado e o que desligar primeiro.",
+      "entrega": [],
+      "formato": "skill"
+    }
+  ],
+  "workflows": [
+    {
+      "slug": "anuncio-sem-cara-de-ia",
+      "titulo": "Anúncio pronto pro gerenciador",
+      "quando": "Rodada nova de anúncios estáticos pra Meta.",
+      "passos": [
+        {
+          "skill": "ads-dna",
+          "faz": "lê o site e monta a ficha da marca"
+        },
+        {
+          "skill": "ads-create",
+          "faz": "gera conceitos e o deck de copy"
+        },
+        {
+          "skill": "copywriting-guardrails",
+          "faz": "tira os vícios de IA"
+        },
+        {
+          "skill": "copy-format-check",
+          "faz": "corta o que estoura o limite da plataforma"
+        }
+      ],
+      "itens": [
+        "kit-de-arranque"
+      ]
+    },
+    {
+      "slug": "pesquisa-ao-carrossel",
+      "titulo": "Da pesquisa ao carrossel",
+      "quando": "Post de autoridade com dado de verdade.",
+      "passos": [
+        {
+          "skill": "content-research-briefing",
+          "faz": "acha a tese e o dado citável"
+        },
+        {
+          "skill": "carousel-mktops",
+          "faz": "escreve os slides em 4 atos"
+        },
+        {
+          "skill": "copywriting-guardrails",
+          "faz": "revisão final"
+        }
+      ],
+      "itens": [
+        "pesquisa-de-mercado",
+        "kit-de-arranque"
+      ]
+    },
+    {
+      "slug": "video-ad-com-hook",
+      "titulo": "Vídeo ad com abertura testada",
+      "quando": "Antes de gravar qualquer reel de anúncio.",
+      "passos": [
+        {
+          "skill": "ads-video-scripts",
+          "faz": "escreve o roteiro em cenas"
+        },
+        {
+          "skill": "hook-lab",
+          "faz": "forja e audita os 3 primeiros segundos"
+        },
+        {
+          "skill": "copywriting-guardrails",
+          "faz": "revisão final"
+        }
+      ],
+      "itens": [
+        "roteiros-de-video",
+        "hook-lab"
+      ]
+    },
+    {
+      "slug": "vsl-cliente-novo",
+      "titulo": "VSL pra uma oferta nova",
+      "quando": "Lançamento ou oferta high-ticket.",
+      "passos": [
+        {
+          "skill": "ads-dna",
+          "faz": "ficha da marca"
+        },
+        {
+          "skill": "customer-research",
+          "faz": "linguagem real do cliente"
+        },
+        {
+          "skill": "vsl-writer",
+          "faz": "roteiro curto e longo"
+        },
+        {
+          "skill": "copywriting-guardrails",
+          "faz": "revisão final"
+        }
+      ],
+      "itens": [
+        "roteiros-de-video",
+        "pesquisa-de-mercado"
+      ]
+    },
+    {
+      "slug": "conta-de-anuncios-sangrando",
+      "titulo": "Conta de anúncios que parou de dar resultado",
+      "quando": "CPL subiu e ninguém sabe por quê.",
+      "passos": [
+        {
+          "skill": "ads-meta",
+          "faz": "46 checagens com nota"
+        },
+        {
+          "skill": "ads-creative",
+          "faz": "fadiga e diversidade de criativo"
+        },
+        {
+          "skill": "ads-budget",
+          "faz": "verba e lance"
+        },
+        {
+          "skill": "market-landing",
+          "faz": "confere se a página derruba o anúncio"
+        }
+      ],
+      "itens": [
+        "auditoria-de-anuncios",
+        "pagina-que-converte"
+      ]
+    },
+    {
+      "slug": "pagina-citada-pela-ia",
+      "titulo": "Página que o ChatGPT cita",
+      "quando": "Conteúdo novo ou página que não aparece em busca de IA.",
+      "passos": [
+        {
+          "skill": "seo-page",
+          "faz": "raio-x da página"
+        },
+        {
+          "skill": "ai-seo",
+          "faz": "estrutura que buscador de IA extrai"
+        },
+        {
+          "skill": "schema-markup",
+          "faz": "dados estruturados"
+        }
+      ],
+      "itens": [
+        "seo-e-busca-em-ia"
+      ]
+    }
+  ],
+  "aulas": [
+    {
+      "id": "GZnol89o_3k",
+      "titulo": "Como fazer vídeos com IA",
+      "min": 15,
+      "itens": [
+        "guia-edicao-de-video",
+        "hook-lab",
+        "roteiros-de-video"
+      ]
+    },
+    {
+      "id": "wGGxui7BGZY",
+      "titulo": "Como fazer e-mail marketing em 2026 (com IA)",
+      "min": 30,
+      "itens": [
+        "emails-que-vendem"
+      ]
+    },
+    {
+      "id": "FVGXm1TY85k",
+      "titulo": "Como vender SaaS, infoprodutos e serviços pela internet (usando IA)",
+      "min": 33,
+      "itens": [
+        "estrategia-de-marketing",
+        "kit-de-arranque"
+      ]
+    },
+    {
+      "id": "OMct1UCuIh8",
+      "titulo": "O que é SEO e como implementar?",
+      "min": 10,
+      "itens": [
+        "seo-e-busca-em-ia"
+      ]
+    },
+    {
+      "id": "1tJyadsXLlw",
+      "titulo": "Como aparecer no Google sem pagar anúncios",
+      "min": 8,
+      "itens": [
+        "seo-e-busca-em-ia"
+      ]
+    },
+    {
+      "id": "5DDed0ArsDk",
+      "titulo": "SEO leva quanto tempo para dar resultados?",
+      "min": 7,
+      "itens": [
+        "seo-e-busca-em-ia"
+      ]
+    }
+  ]
+}

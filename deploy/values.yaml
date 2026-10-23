@@ -1,0 +1,42 @@
+# Mesmo molde do artemis-crawler: imagem node oficial + server.js montado de um ConfigMap.
+# O servidor não tem dependência npm, então não há build de imagem (a máquina do time não tem Docker).
+# O conteúdo (páginas públicas, páginas completas e downloads) vive no PVC e sobe com ../publicar.sh,
+# que troca a pasta inteira de uma vez.
+image:
+  repository: node
+  tag: "22-alpine"
+
+port: 3000
+healthPath: /api/health
+host: arsenal.studioartemis.co
+
+env:
+  - name: PORT
+    value: "3000"
+  - name: SITE_DIR
+    value: /data/site
+  - name: PUBLIC_ORIGIN
+    value: https://arsenal.studioartemis.co
+  - name: MAUTIC_FORM_ID
+    value: "9"
+  - name: MAUTIC_FORM_ALIAS
+    value: mktops__ar
+  # E-mail "MktOps · Arsenal · link de acesso" (provisionar-mautic.py)
+  - name: MAUTIC_EMAIL_LINK
+    value: "192"
+
+# Chaves vêm do secret arsenal-secrets: SESSION_SECRET (assina sessão e link mágico — trocar derruba todo mundo),
+# MAUTIC_URL, MAUTIC_USER, MAUTIC_PASSWORD.
+secretName: arsenal-secrets
+secretKeys: [SESSION_SECRET, MAUTIC_URL, MAUTIC_USER, MAUTIC_PASSWORD]
+
+storage: 1Gi
+
+# Quota do namespace vive quase cheia em limits.cpu. Servidor de arquivo estático + 2 rotas de API: pouco CPU.
+resources:
+  requests:
+    cpu: 20m
+    memory: 64Mi
+  limits:
+    cpu: 200m
+    memory: 192Mi

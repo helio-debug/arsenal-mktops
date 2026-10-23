@@ -1,0 +1,5 @@
+apiVersion: v2
+name: arsenal
+description: "Arsenal MktOps — portal open source de conhecimento e ferramentas de IA (arsenal.studioartemis.co), com login por cookie assinado e link mágico"
+version: 0.1.0
+appVersion: "1.0.0"

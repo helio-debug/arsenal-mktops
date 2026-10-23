@@ -1,0 +1,20 @@
+{
+  "_leia": "Os 15 agentes do sistema os-15-agentes, com nome e descrição públicos. O arquivo do agente sai do .claude/agents/ dentro do zip do sistema.",
+  "agentes": [
+    { "slug": "audit-meta", "area": "anuncios", "titulo": "Auditor de Meta Ads", "descricao": "Confere Pixel e API de Conversões, qualidade do evento, fadiga e variedade de criativo, estrutura da conta, fase de aprendizado, público e Advantage+." },
+    { "slug": "audit-google", "area": "anuncios", "titulo": "Auditor de Google Ads", "descricao": "Passa por rastreamento de conversão, verba desperdiçada, estrutura, palavra-chave, Índice de Qualidade, recursos do anúncio, Performance Max e lance." },
+    { "slug": "audit-budget", "area": "anuncios", "titulo": "Auditor de verba e lance", "descricao": "Olha como a verba está distribuída, se a estratégia de lance faz sentido, a saúde da fase de aprendizado e a estrutura de campanha em LinkedIn, TikTok e Microsoft." },
+    { "slug": "audit-creative", "area": "anuncios", "titulo": "Auditor de criativo", "descricao": "Mede variedade de formato, sinais de fadiga, se o criativo parece nativo da plataforma e se respeita as especificações de cada uma." },
+    { "slug": "audit-tracking", "area": "conversao", "titulo": "Auditor de rastreamento", "descricao": "Confere instalação de pixel, rastreamento no servidor, configuração de eventos e atribuição. É o que diz se o número que você vê no painel é verdade." },
+    { "slug": "audit-compliance", "area": "anuncios", "titulo": "Auditor de política e benchmark", "descricao": "Checa política de anúncio, privacidade, configuração de campanha e compara sua performance com o padrão do setor." },
+    { "slug": "market-technical", "area": "seo", "titulo": "Analista técnico de site", "descricao": "Avalia a base de SEO, velocidade, tags de rastreamento (GA4, GTM, pixels), schema, arquitetura de conteúdo e versão mobile." },
+    { "slug": "market-content", "area": "copy", "titulo": "Analista de mensagem", "descricao": "Lê o site e avalia a copy: clareza da headline, força da proposta de valor, poder de persuasão e eficácia das chamadas." },
+    { "slug": "market-conversion", "area": "conversao", "titulo": "Analista de conversão", "descricao": "Caça o que trava a venda no site: fricção, vazamento de funil, CTA fraco, falta de prova social e o que vale testar primeiro." },
+    { "slug": "market-competitive", "area": "pesquisa", "titulo": "Analista de concorrência", "descricao": "Identifica os concorrentes e compara posicionamento, preço, funcionalidades e autoridade de conteúdo." },
+    { "slug": "market-strategy", "area": "estrategia", "titulo": "Analista de estratégia", "descricao": "Avalia confiança da marca, oportunidades de crescimento, preço, canais de aquisição e onde está a receita que ficou na mesa." },
+    { "slug": "creative-strategist", "area": "anuncios", "titulo": "Estrategista de campanha", "descricao": "Lê a ficha da marca e gera os conceitos da campanha, os pilares de mensagem e a direção criativa de cada plataforma." },
+    { "slug": "copy-writer", "area": "copy", "titulo": "Redator de anúncio", "descricao": "Escreve headline, texto principal, descrição e chamada dentro do limite de cada plataforma, conferindo os caracteres antes de entregar." },
+    { "slug": "visual-designer", "area": "anuncios", "titulo": "Designer de anúncio", "descricao": "Monta os prompts de imagem a partir do brief, gera as artes de cada formato e organiza tudo numa pasta pronta pra subir." },
+    { "slug": "format-adapter", "area": "anuncios", "titulo": "Conferente de formato", "descricao": "Confere tamanho, proporção e área segura de cada arte gerada e aponta o formato que está faltando em cada plataforma." }
+  ]
+}
