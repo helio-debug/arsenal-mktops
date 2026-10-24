@@ -144,6 +144,7 @@ function lateral(ativo) {
     ${areas.map((a) => nav(`/?area=${a.id}#catalogo`, "", a.nome, ITENS.filter((i) => i.area === a.id).length, ` data-area-link="${a.id}"`)).join("")}
     <h4 class="label">Projeto</h4>
     ${nav("/#aberto", ICONE.material, "Por que é aberto")}
+    ${nav("/#quem", ICONE.inicio, "Quem está por trás")}
     ${nav(GITHUB, ICONE.github, "Código no GitHub", undefined, ' target="_blank" rel="noopener"')}
     ${nav("/#produtos", ICONE.produto, "Pra ir mais fundo")}
   </nav>
@@ -262,20 +263,21 @@ function paginaIndex() {
   const areas = cat.areas.filter((a) => ITENS.some((i) => i.area === a.id)).sort((a, b) => ORDEM_AREA.indexOf(a.id) - ORDEM_AREA.indexOf(b.id));
   const tipos = ["ferramenta", "agente", "sistema", "relatorio", "aula", "material"].filter(conta);
   return pagina({
-    titulo: "Arsenal MktOps · portal open source de conhecimento e ferramentas de IA",
-    descricao: `Portal aberto da Studio Artemis: ${conta("ferramenta")} ferramentas e ${conta("agente")} agentes de IA, aulas e ${conta("relatorio")} análises de concorrente. O que os cursos de IA cobram R$ 20 mil por ano pra ensinar, aberto pra todo empreendedor.`,
+    titulo: "Arsenal MktOps · o ponto de partida de quem leva o próprio marketing a sério",
+    descricao: `Primeira plataforma open-source de marketing do Brasil. ${conta("ferramenta")} soluções prontas, ${conta("relatorio")} concorrentes destrinchados, agentes e aulas da Studio Artemis, sem mensalidade.`,
     url: "/", ativo: "Início",
     corpo: `
   <section class="hero">
-    <span class="pilula"><i></i>Projeto open source · atualizado toda semana</span>
-    <h1>Curso de IA cobra R$&nbsp;20&nbsp;mil por ano pelo que deveria ser de todo mundo. <em>Aqui está aberto.</em></h1>
-    <p class="sub">O Arsenal é o portal open source onde a Studio Artemis publica o que usa todo dia com IA: as ferramentas, os agentes, as aulas e a análise dos anúncios de quem está vendendo. Sem matrícula, sem turma, sem mensalidade.</p>
+    <span class="pilula"><i></i>Primeira plataforma open-source de marketing do Brasil</span>
+    <h1>O ponto de partida de quem leva o próprio marketing a sério.</h1>
+    <p class="sub">Pra quem vende pela internet e cansou de depender de agência, guru e sorte.</p>
+    <p class="desc-hero">O Arsenal é o portal open source onde a Studio Artemis publica o que usa todo dia com IA: as ferramentas, os agentes, as aulas e a análise dos anúncios de quem está vendendo. Sem matrícula, sem turma, sem mensalidade.</p>
     <div class="ctas"><a class="btn so-deslogado" href="#" data-entrar>Entrar grátis</a><a class="btn leve" href="#catalogo">Explorar o catálogo</a></div>
     <div class="numeros">
-      <div><b>${conta("ferramenta")}</b><span>ferramentas</span></div>
-      <div><b>${conta("agente")}</b><span>agentes</span></div>
-      <div><b>${conta("relatorio")}</b><span>relatórios</span></div>
-      <div><b>R$0</b><span>matrícula</span></div>
+      <div><b>${conta("relatorio")}</b><span>concorrentes destrinchados</span></div>
+      <div><b>${conta("ferramenta")}</b><span>soluções prontas</span></div>
+      <div><b>200+</b><span>empresas atendidas</span></div>
+      <div><b>R$0</b><span>de mensalidade</span></div>
     </div>
   </section>
 
@@ -315,6 +317,41 @@ function paginaIndex() {
         <p>Quem tranca esse conhecimento numa turma com matrícula anual atrasa justo quem mais precisa dele: o empreendedor que toca o negócio e não tem R$&nbsp;20&nbsp;mil sobrando pra aprender o que já existe.</p>
         <p>A Studio Artemis já atendeu mais de 200 empresas com estas ferramentas. Cada uma nasceu de um projeto real, e o que a gente aprende no próximo entra aqui também. Use no seu negócio, adapte, passe adiante.</p>
         <a class="btn leve" href="${GITHUB}" target="_blank" rel="noopener">${ICONE.github}Ver o código no GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="quem">
+    <div class="cab"><div><span class="label">Quem está por trás</span><h2>Feito por quem opera isso todo dia</h2>
+      <p>O Arsenal é a parte aberta do Grupo Artemis, um ecossistema de empresas de tecnologia que já atendeu mais de 200 empresas. Tudo que está aqui saiu da operação destas três frentes.</p></div></div>
+    <div class="quem">
+      <figure class="foto-equipe"><img src="/assets/img/equipe.jpg" alt="Time da Studio Artemis trabalhando no escritório" loading="lazy" width="1400" height="1173"><figcaption>O time no escritório da Artemis.</figcaption></figure>
+      <div class="frentes">
+        <article class="frente">
+          <span class="label">Studio Artemis</span>
+          <h3>Automação com IA pra indústria e B2B</h3>
+          <p>Pegamos o conhecimento que só existe na cabeça do especialista e transformamos em sistema que decide com a mesma qualidade. Validação de documento, levantamento de planta, codificação de peça, roteirização de carga. Num dos projetos, um levantamento que levava 3 horas passou a sair em 25 minutos. Em outro, a validação de documentos economiza R$&nbsp;40 mil por mês.</p>
+        </article>
+        <article class="frente">
+          <span class="label">Artemis SEO</span>
+          <h3>SaaS de SEO com a busca em IA no centro</h3>
+          <p>Software que leva a empresa pro topo do Google e faz o ChatGPT, o Gemini e o Perplexity citarem o nome dela quando alguém pergunta. Roda há mais de um ano e é a linha que mais fatura no grupo.</p>
+        </article>
+        <article class="frente">
+          <span class="label">MktOps</span>
+          <h3>O marketing com IA operado dentro da sua empresa</h3>
+          <p>Equipamos e treinamos o seu time pra tocar o marketing com IA na própria casa, sem depender de agência. O Arsenal é a porta aberta do MktOps.</p>
+        </article>
+      </div>
+    </div>
+    <div class="autor">
+      <img src="/assets/img/helio.jpg" alt="Hélio Costa Jr." loading="lazy" width="640" height="800">
+      <div>
+        <span class="label">Quem assina</span>
+        <h3>Hélio Costa Jr.</h3>
+        <p class="cargo">Sócio-diretor do Grupo Artemis</p>
+        <p>Publicitário de formação, especialista em escrita criativa e marketing com IA. Fui head de marketing do Viver de IA e passei pelos mercados financeiro e educacional. As campanhas que assinei nesses lugares somam mais de R$&nbsp;100 milhões em valor de vendas.</p>
+        <p>Toda semana eu publico aqui o que está rodando na operação: o que funcionou, o que quebrou e o que a gente mudou por causa disso.</p>
       </div>
     </div>
   </section>
@@ -465,6 +502,7 @@ function escrever(raiz, rel, html) {
 }
 fs.mkdirSync(path.join(PUB, "assets"), { recursive: true });
 for (const a of ["arsenal.css", "arsenal.js"]) fs.copyFileSync(path.join(AQUI, "fonte", a), path.join(PUB, "assets", a));
+fs.cpSync(path.join(AQUI, "fonte", "img"), path.join(PUB, "assets", "img"), { recursive: true });
 
 const urls = ["/"];
 const aberta = (rel, gerar, url) => { MODO = "publico"; escrever(PUB, rel, gerar()); if (url) urls.push(url); };

@@ -251,3 +251,24 @@ footer a{color:var(--corpo)}
 .modal .aviso.visivel{display:block}
 .modal .erro-envio{font-size:13px;color:var(--erro);margin-top:8px;display:none}
 .modal .erro-envio.visivel{display:block}
+
+/* topo: descrição abaixo do subtítulo */
+.hero p.desc-hero{font-size:15px;color:var(--suave);max-width:62ch;margin:14px auto 0}
+.hero h1{max-width:20ch}
+
+/* quem está por trás */
+.quem{display:grid;gap:20px;margin-bottom:20px}
+@media (min-width:1000px){.quem{grid-template-columns:1.05fr 1fr;align-items:stretch}}
+.foto-equipe{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--linha);position:relative;min-height:280px}
+.foto-equipe img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05)}
+.foto-equipe figcaption{position:absolute;left:12px;bottom:12px;background:#fff;font:500 11px 'JetBrains Mono',monospace;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:6px;color:var(--corpo)}
+.frentes{display:flex;flex-direction:column;gap:12px}
+.frente{border:1px solid var(--linha);border-radius:14px;padding:18px 20px}
+.frente h3{font-size:17px;font-weight:600;letter-spacing:-.015em;margin:6px 0 6px}
+.frente p{font-size:14.5px;color:var(--corpo)}
+.autor{display:grid;gap:20px;align-items:center;border:1px solid var(--linha);border-radius:14px;padding:22px;background:var(--lateral)}
+@media (min-width:700px){.autor{grid-template-columns:150px 1fr}}
+.autor img{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:50% 25%;filter:grayscale(1)}
+.autor h3{font-size:22px;font-weight:600;letter-spacing:-.02em;margin-top:4px}
+.autor .cargo{font-size:14px;color:var(--suave);margin-bottom:10px}
+.autor p{color:var(--corpo);margin-bottom:8px;max-width:70ch}
