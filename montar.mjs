@@ -5,6 +5,7 @@
 // modal de entrada que não fecha) e build/completo (conteúdo de verdade). O servidor (deploy/app/server.js)
 // só entrega a completa e os downloads com sessão válida, então nada protegido aparece no código-fonte público.
 import fs from "node:fs";
+import crypto from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { marked } from "marked";
@@ -18,6 +19,9 @@ const cat = ler("catalogo.json");
 const TITULOS = ler("titulos.json");
 const AGENTES_DEF = ler("agentes.json").agentes;
 const RELS_BRUTOS = fs.existsSync(path.join(AQUI, "gerado", "relatorios.json")) ? ler("gerado/relatorios.json").relatorios : [];
+// Versão dos assets no endereço (?v=): o servidor manda CSS e JS com cache de 1h, e sem isso o navegador
+// segurava o CSS velho depois de cada publicação (23/10/2026: topo e fotos quebrados na tela do Hélio).
+const VERSAO = crypto.createHash("sha1").update(["arsenal.css", "arsenal.js"].map((a) => fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), "fonte", a))).join("")).digest("hex").slice(0, 10);
 const DOMINIO = "https://arsenal.studioartemis.co";
 const GITHUB = "https://github.com/helio-debug/arsenal-mktops";
 const GTM = "GTM-WW4JRN7";
@@ -174,7 +178,7 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : ""}<meta property="og:t
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M0 0H10V6H6V10H0Z' fill='%230A0A0A'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/arsenal.css">
+<link rel="stylesheet" href="/assets/arsenal.css?v=${VERSAO}">
 </head>
 <body${protegido && MODO === "publico" ? ` data-protegido="${esc(protegido)}" data-titulo="${esc(tituloModal || "Entrar no portal")}"` : ""}>
 <!-- Google Tag Manager (noscript) -->
@@ -199,7 +203,7 @@ ${corpo}
   </div></footer>
 </div>
 ${MODAL}
-<script src="/assets/arsenal.js"></script>
+<script src="/assets/arsenal.js?v=${VERSAO}"></script>
 </body></html>`;
 }
 
@@ -268,8 +272,8 @@ function paginaIndex() {
     url: "/", ativo: "Início",
     corpo: `
   <section class="hero">
-    <span class="pilula"><i></i>Primeira plataforma open-source de marketing do Brasil</span>
-    <h1>O ponto de partida de quem leva o próprio marketing a sério.</h1>
+    <span class="pilula"><i></i><span>Primeira plataforma <b>open-source</b> de marketing do Brasil</span></span>
+    <h1>O ponto de partida de quem leva o próprio marketing <em>a&nbsp;sério.</em></h1>
     <p class="sub">Pra quem vende pela internet e cansou de depender de agência, guru e sorte.</p>
     <p class="desc-hero">O Arsenal é o portal open source onde a Studio Artemis publica o que usa todo dia com IA: as ferramentas, os agentes, as aulas e a análise dos anúncios de quem está vendendo. Sem matrícula, sem turma, sem mensalidade.</p>
     <div class="ctas"><a class="btn so-deslogado" href="#" data-entrar>Entrar grátis</a><a class="btn leve" href="#catalogo">Explorar o catálogo</a></div>

@@ -272,3 +272,73 @@ footer a{color:var(--corpo)}
 .autor h3{font-size:22px;font-weight:600;letter-spacing:-.02em;margin-top:4px}
 .autor .cargo{font-size:14px;color:var(--suave);margin-bottom:10px}
 .autor p{color:var(--corpo);margin-bottom:8px;max-width:70ch}
+
+/* ================= v4 (23/10/2026): cor de acento, contraste e leitura =================
+   Uma cor só de acento — laranja — porque branco e preto puros deixaram a página sem vida
+   e o verde claro foi rejeitado. Trocar a cor = mudar --acento e --acento-escuro. */
+:root{ --acento:#FF5B14; --acento-escuro:#C2410C; --acento-fundo:#FFF1EA; --noite:#0A0A0A; --noite-2:#161618; --noite-linha:#2A2A2E; }
+
+/* topo */
+.hero{position:relative;padding:64px 0 44px;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0 -40px;z-index:-1;
+  background-image:radial-gradient(circle at 1px 1px,rgba(10,10,10,.12) 1px,transparent 0);background-size:22px 22px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 75% at 50% 35%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 70% 75% at 50% 35%,#000 30%,transparent 75%)}
+.hero::after{content:"";position:absolute;left:50%;top:40px;width:520px;height:220px;transform:translateX(-50%);z-index:-1;
+  background:radial-gradient(closest-side,rgba(255,91,20,.16),transparent);filter:blur(10px)}
+.pilula{background:var(--noite);color:#fff;border-color:var(--noite);padding:7px 14px 7px 10px;font-size:13px;box-shadow:0 6px 18px -8px rgba(10,10,10,.5)}
+.pilula b{color:var(--acento);font-weight:600}
+.pilula i{background:var(--acento);box-shadow:0 0 0 4px rgba(255,91,20,.25);animation:pulso 2s ease-in-out infinite}
+@keyframes pulso{50%{box-shadow:0 0 0 7px rgba(255,91,20,0)}}
+.hero h1{max-width:16ch;text-wrap:balance;font-size:clamp(34px,5.6vw,64px);margin:22px auto 18px}
+.hero h1 em{font-style:normal;background:none;position:relative;white-space:nowrap;color:var(--noite);z-index:0}
+.hero h1 em::after{content:"";position:absolute;left:-2%;right:-2%;bottom:.14em;height:.3em;background:var(--acento);z-index:-1;border-radius:3px;opacity:.9}
+.hero p.sub{font-size:clamp(18px,2vw,21px);color:var(--noite);font-weight:500;max-width:46ch;text-wrap:balance}
+.hero p.desc-hero{font-size:15.5px;line-height:1.65;color:#52525B;max-width:58ch;margin:12px auto 0;text-wrap:pretty}
+.hero .ctas{margin-top:28px}
+.hero .ctas .btn:first-child{box-shadow:0 8px 20px -10px rgba(10,10,10,.6)}
+.numeros{background:var(--noite);border-color:var(--noite);margin-top:38px;box-shadow:0 18px 40px -22px rgba(10,10,10,.6)}
+.numeros div + div{border-left-color:var(--noite-linha)}
+.numeros b{color:#fff;font-size:24px}
+.numeros span{color:#A1A1AA}
+.numeros div:first-child b{color:var(--acento)}
+@media (max-width:560px){.numeros div:nth-child(n+3){border-top-color:var(--noite-linha)}}
+
+/* catálogo: ícone escuro dá peso à grade */
+.icone{background:var(--noite);border-color:var(--noite);color:#fff}
+.card:hover .icone{background:var(--acento);border-color:var(--acento)}
+.card:hover{border-color:var(--noite)}
+.chip[aria-pressed="true"]{border-bottom-color:var(--acento)}
+.etq.escura{background:var(--acento);border-color:var(--acento)}
+
+/* comparação: bloco escuro */
+#aberto{background:var(--noite);color:#fff;border-radius:22px;padding:44px 28px;margin:12px 0;border-top:0}
+@media (min-width:760px){#aberto{padding:52px 44px}}
+#aberto .label{color:var(--acento)}
+#aberto .cab h2{color:#fff}
+#aberto .tabela-troca{border-color:var(--noite-linha);background:var(--noite-2)}
+#aberto .tabela-troca .linha-t + .linha-t{border-top-color:var(--noite-linha)}
+#aberto .tabela-troca .linha-t span{background:transparent;color:#8E8E96;border-right-color:var(--noite-linha);text-decoration:line-through;text-decoration-color:rgba(255,255,255,.25)}
+#aberto .tabela-troca .linha-t b{color:#fff}
+#aberto .tabela-troca .cabeca-t span{text-decoration:none;color:#8E8E96}
+#aberto .tabela-troca .cabeca-t b{color:var(--acento)}
+#aberto .tabela-troca .linha-t:last-child b{color:var(--acento);font-size:16px}
+#aberto .porque{border-color:var(--noite-linha);background:var(--noite-2)}
+#aberto .porque h3{color:#fff}
+#aberto .porque p{color:#C4C4CC}
+#aberto .porque .btn.leve{background:transparent;color:#fff;border-color:#3F3F46}
+#aberto .porque .btn.leve:hover{border-color:#fff}
+.secao#aberto + .secao{border-top:0}
+
+/* quem está por trás: fotos coloridas, sem filtro */
+.foto-equipe img{filter:none}
+.autor img{filter:none}
+.frente{border-left:3px solid var(--acento)}
+.autor{background:#fff;box-shadow:0 10px 30px -20px rgba(10,10,10,.35)}
+
+/* workflows: o número do passo ganha a cor */
+.fluxo li::before{background:var(--acento)}
+
+/* leitura geral: texto de apoio um tom mais escuro */
+.cab p{color:#52525B}
+.card p{color:#62626A}
+@media (max-width:520px){.pilula{font-size:11px;padding:6px 11px 6px 9px;gap:7px;letter-spacing:-.01em}.foto-equipe img{object-position:35% 50%}}
